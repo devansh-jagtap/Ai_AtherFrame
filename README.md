@@ -1,56 +1,36 @@
-# Getting Started with Create React App
+# AI AetherFrame (Next.js + Tailwind)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is now built with Next.js App Router and Tailwind CSS.
 
----
+## Setup
 
-## 🛠️ Setup Instructions
-
-### 1. Clone the Repository
-
-##bash
+```bash
 git clone https://github.com/your-username/ai-image-generator.git
 cd ai-image-generator
+npm install
+```
 
+## Environment Variables
 
+Create a `.env.local` file:
 
-## .env file  
+```bash
+GOOGLE_API_KEY=your_google_api_key_here
+```
 
-REACT_APP_OPENAI_API_KEY=your_openai_api_key_here
-REACT_APP_GOOGLE_API_KEY=your_google_api_key_here
+The key is used only on the server API route (`app/api/generate-image/route.js`).
 
+## Scripts
 
-## Available Scripts
+- `npm run dev` - start local development server at `http://localhost:3000`
+- `npm run build` - create production build
+- `npm run start` - start production server
+- `npm run lint` - run ESLint
 
-In the project directory, you can run:
+## Structure
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `app/page.js` - page entry point
+- `app/api/generate-image/route.js` - server API endpoint for image generation
+- `src/components/image-generator/ImageGeneratorContainer.jsx` - client logic container
+- `src/components/image-generator/ImageGeneratorView.jsx` - presentational UI component
+- `src/services/imageGeneratorClient.js` - API client service used by container
